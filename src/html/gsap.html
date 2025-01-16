@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/style/style.scss" />
+  </head>
+
+  <body>
+    <!--하고 싶은거
+   1. 스크롤 하단으로 내려가면 header bg 투명
+   2. 맨 바닥으로 내려갔을 떄 footer 올라오는 느낌
+
+-->
+    <div id="container scroller">
+      <header>header</header>
+      <div class="contents">
+        <div class="content">
+          <div class="title-area">
+            <span>Lorem Ipsum</span>
+            <h2>
+              Lorem ips dolor sit amet, consectetur adipisci elit, sed eiusmod
+              tempor incidunt test
+            </h2>
+          </div>
+          <div class="key-visual">
+            <div class="thumbnail"></div>
+            <p class="text">
+              Lorem ips dolor sit amet, consectetur adipisci elit, sed eiusmod
+              tempor incidunt
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="box">box</div>
+      <footer class="footer">footer</footer>
+    </div>
+    <!--    <script type="module" src="/js/common.js"></script>-->
+    <script type="module" src="/src/js/common.js"></script>
+    <script type="module" src="/src/js/gsap-test.js"></script>
+
+    <!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>-->
+    <!--    <script>-->
+    <!--      console.log(gsap); // 전역 변수 gsap 사용-->
+    <!--      gsap.to(".box", { x: 100, duration: 2 });-->
+    <!--    </script>-->
+  </body>
+</html>
