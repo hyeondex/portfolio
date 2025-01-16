@@ -16,4 +16,7 @@ export default defineConfig({
       include: [/node_modules/], // CommonJS 모듈 처리
     },
   },
+  server: {
+    port: 3000,
+  },
 });
