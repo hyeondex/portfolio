@@ -12,14 +12,9 @@
   </head>
 
   <body>
-    <!--하고 싶은거
-   1. 스크롤 하단으로 내려가면 header bg 투명
-   2. 맨 바닥으로 내려갔을 떄 footer 올라오는 느낌
-
--->
-    <div id="container scroller">
+    <div id="container" class="scroller">
       <header>header</header>
-      <div class="contents">
+      <section class="contents">
         <div class="content">
           <div class="title-area">
             <span>Lorem Ipsum</span>
@@ -36,9 +31,22 @@
             </p>
           </div>
         </div>
-      </div>
-      <div class="box">box</div>
-      <footer class="footer">footer</footer>
+      </section>
+      <section class="box">box</section>
+
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-row">
+            <div class="logo"></div>
+          </div>
+
+          <div class="footer-row center"></div>
+
+          <div class="footer-row">
+            <div class="foot"></div>
+          </div>
+        </div>
+      </footer>
     </div>
     <!--    <script type="module" src="/js/common.js"></script>-->
     <script type="module" src="/src/js/common.js"></script>

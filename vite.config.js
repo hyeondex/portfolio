@@ -9,7 +9,7 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    include: ["gsap"], // GSAP 사전 번들링 강제
+    include: ["gsap", "smooth-scrollbar"], // GSAP 사전 번들링 강제
   },
   build: {
     commonjsOptions: {
@@ -17,6 +17,6 @@ export default defineConfig({
     },
   },
   server: {
-    port: 3000,
+    port: 3001,
   },
 });
