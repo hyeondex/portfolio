@@ -49,3 +49,50 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+//ScrollTrigger.matchMedia({
+//   // 모바일 및 태블릿
+//   "(max-width: 768px)": function () {
+//
+//     // sec03 WeMAKEPOSSIBLE
+//     const sec03Mo = gsap.timeline({
+//       scrollTrigger: {
+//         trigger: '.sec03',
+//         start: '-60% top',
+//         end: 'bottom top',
+//         scrub: 1.5, // 스크롤을 따라 애니메이션 진행
+//       }
+//     })
+//     // we 글자
+//     sec03Mo.fromTo('.textWe', { x: '-250%' }, { x: '-50%', ease: 'none', duration: 2 },0)
+//     .to('.textWe',{ x: '200%', ease: 'none', duration: 2 },2)
+//     // make 글자
+//     .fromTo('.textMake', { x: '-200%' }, { x: '-50%', ease: 'none', duration: 2 },0)
+//     .to('.textMake',{ x: '100%', ease: 'none', duration: 2 },2)
+//     // poss 글자
+//     .fromTo('.textPoss', { x: '20%' }, { x: '-50%', ease: 'none', duration: 2 },0)
+//     .to('.textPoss', { x: '-100%', ease: 'none', duration: 2 },2);
+//   },
+//
+//   // 데스크톱
+//   "(min-width: 769px)": function () {
+//     // sec03 WeMAKEPOSSIBLE
+//       const sec03Pc = gsap.timeline({
+//         scrollTrigger: {
+//           trigger: '.sec03',
+//           start: '-40% top',
+//           end: 'bottom top',
+//           scrub: 1.5, // 스크롤을 따라 애니메이션 진행
+//           // markers: true // 디버깅을 위한 마커 표시
+//         }
+//       })
+//       // we 글자
+//       sec03Pc.fromTo('.textWe', { x: '-250%' }, { x: '-50%', ease: 'none', duration: 2 },0)
+//       .to('.textWe',{ x: '200%', ease: 'none', duration: 2 },2)
+//       // make 글자
+//       .fromTo('.textMake', { x: '-200%' }, { x: '-50%', ease: 'none', duration: 2 },0)
+//       .to('.textMake',{ x: '100%', ease: 'none', duration: 2 },2)
+//       // poss 글자
+//       .fromTo('.textPoss', { x: '20%' }, { x: '-50%', ease: 'none', duration: 2 },0)
+//       .to('.textPoss', { x: '-100%', ease: 'none', duration: 2 },2);
+//   },
