@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     end: "+=75%",
     animation: uncover,
     scrub: true,
-    markers: true,
+    //markers: true,
   });
 
   // Only necessary to correct marker position - not needed in production
@@ -48,6 +48,31 @@ document.addEventListener("DOMContentLoaded", () => {
       gsap.set(markers, { marginTop: -offset.y });
     });
   }
+  const mainTextTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".horizontal-txt",
+      start: "-50% 0",
+      end: "bottom top",
+      scrub: 3,
+      markers: {
+        startColor: "orange",
+      },
+      onUpdate: (self) => {
+        console.log(self);
+      },
+    },
+  });
+
+  //fromTo : 초기 / 끝 값
+  //to : 현재 값 기준으로 끝나는 값
+  //여기서 최종으로 끝나는 값은 to의 값
+  mainTextTl
+    .fromTo(".text1", { x: "100%" }, { x: "0%", ease: "none", duration: 2 }, 0)
+    .to(".text1", { x: "-100%", ease: "none", duration: 2 }, 1)
+    .fromTo(".text2", { x: "-100%" }, { x: "0%", ease: "none", duration: 2 }, 0)
+    .to("text2", { x: "-200%", ease: "none", duration: 2 }, 2)
+    .fromTo(".text3", { x: "150%" }, { x: "0%", ease: "none", duration: 2 }, 0)
+    .to(".text3", { x: "-250%", ease: "none", duration: 2 }, 2);
 });
 
 //ScrollTrigger.matchMedia({
@@ -87,12 +112,12 @@ document.addEventListener("DOMContentLoaded", () => {
 //         }
 //       })
 //       // we 글자
-//       sec03Pc.fromTo('.textWe', { x: '-250%' }, { x: '-50%', ease: 'none', duration: 2 },0)
-//       .to('.textWe',{ x: '200%', ease: 'none', duration: 2 },2)
-//       // make 글자
-//       .fromTo('.textMake', { x: '-200%' }, { x: '-50%', ease: 'none', duration: 2 },0)
-//       .to('.textMake',{ x: '100%', ease: 'none', duration: 2 },2)
-//       // poss 글자
-//       .fromTo('.textPoss', { x: '20%' }, { x: '-50%', ease: 'none', duration: 2 },0)
-//       .to('.textPoss', { x: '-100%', ease: 'none', duration: 2 },2);
+/*  sec03Pc.fromTo('.textWe', { x: '-250%' }, { x: '-50%', ease: 'none', duration: 2 },0)
+      .to('.textWe',{ x: '200%', ease: 'none', duration: 2 },2)
+      // make 글자
+      .fromTo('.textMake', { x: '-200%' }, { x: '-50%', ease: 'none', duration: 2 },0)
+      .to('.textMake',{ x: '100%', ease: 'none', duration: 2 },2)
+      // poss 글자
+      .fromTo('.textPoss', { x: '20%' }, { x: '-50%', ease: 'none', duration: 2 },0)
+      .to('.textPoss', { x: '-100%', ease: 'none', duration: 2 },2);*/
 //   },
