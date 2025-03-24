@@ -7,12 +7,54 @@ header {
   position: fixed;
   top: 0;
   left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
-  height: 80px;
-  border: 1px solid black;
+  height: 52px;
+  padding: 0 18px 0 20px;
+  background: #f4f6f5;
+  border-radius: 10px 10px 0 0;
+  border: 1px solid #5e5f5f;
+  border-bottom: none;
+  overflow: hidden;
+  gap: 30px;
   box-sizing: border-box;
 }
-
+header .fake-btn-wrap {
+  display: flex;
+  gap: 8px;
+}
+header .fake-btn-wrap span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fd7d77;
+  border: 1px solid #e4655f;
+}
+header .fake-btn-wrap span + span {
+  background: #fcc856;
+  border-color: #e3b03e;
+}
+header .fake-btn-wrap span + span + span {
+  background: #51d164;
+  border-color: #3ab84c;
+}
+header .center {
+  flex: 1 auto;
+  max-width: 780px;
+  width: 100%;
+  height: 28px;
+  font-size: 16px;
+  text-align: center;
+  line-height: 28px;
+  vertical-align: middle;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fcfcfc;
+  border: 1px solid #dedede;
+  color: #515151;
+}
 footer {
   width: 100%;
   height: 100vh;
@@ -38,6 +80,10 @@ footer .footer-right {
   border: 1px solid white;
 }
 
+.key-visual {
+  background: #eff0ef;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -53,7 +99,6 @@ body {
 section {
   width: 100vw;
   height: 100vh;
-  background-color: lightgrey;
 }
 section:nth-child(odd) {
   background-color: white;
@@ -109,7 +154,6 @@ section:nth-child(odd) {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  outline: 1px solid red;
 }
 .title-area h2 span {
   display: block;
