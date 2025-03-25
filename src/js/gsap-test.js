@@ -84,15 +84,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const HorizontalList = gsap.timeline({
     scrollTrigger: {
       trigger: ".horizontal-list",
-      start: "center center",
-      end: () =>
-        "+=" +
-        (document.querySelector(".horizontal-list").offsetWidth +
-          ((list.length - 1) * list[0].offsetWidth) / 2),
+      start: "top 60px",
+      end: "bottom center",
       scrub: 1,
       markers: true,
       pin: true,
-      pinSpacing: true,
       snap: 1 / (list.length - 1),
       onUpdate: (self) => {
         console.log(self.progress);
