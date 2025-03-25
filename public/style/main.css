@@ -2,4 +2,71 @@
   background: #eff0ef;
 }
 
+.horizontal-list {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+.horizontal-list ul {
+  display: flex;
+  gap: 20px;
+  height: 100%;
+}
+.horizontal-list ul li {
+  position: relative;
+  flex: 0 auto;
+  width: 100%;
+  max-width: 520px;
+  aspect-ratio: 520/640;
+}
+.horizontal-list ul li .thumbnail {
+  display: block;
+  background: #fd7d77;
+  width: 100%;
+  height: 640px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.horizontal-list ul li .txt-area {
+  margin-top: 20px;
+}
+.horizontal-list ul li h3 {
+  font-size: 28px;
+  line-height: 1.4;
+  font-weight: 700;
+  color: #fff;
+}
+.horizontal-list ul li p {
+  margin-top: 12px;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #fff;
+}
+.horizontal-list ul li + li .thumbnail {
+  background: #fcc856;
+}
+.horizontal-list ul li + li + li .thumbnail {
+  background: #51d164;
+}
+
+.title-area {
+  position: relative;
+}
+.title-area h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.title-area h2 span {
+  display: block;
+  font-size: 170px;
+}
+.title-area h2 .text2 {
+  -webkit-text-stroke: 4px navy;
+  text-stroke: 4px navy;
+  color: transparent;
+}
+
 /*# sourceMappingURL=main.css.map */

@@ -6,31 +6,38 @@ gsap.registerPlugin(ScrollTrigger);
 document.addEventListener("DOMContentLoaded", () => {
   const scroller = document.querySelector(".scroller");
 
-  const bodyScrollBar = SmoothScrollbar.init(scroller, {
-    damping: 0.1,
-    delegateTo: document,
-    alwaysShowTracks: true,
-  });
+  // const bodyScrollBar = SmoothScrollbar.init(scroller, {
+  //   damping: 0.1,
+  //   delegateTo: document,
+  //   alwaysShowTracks: true,
+  // });
+  //
+  // //scroll bar
+  // ScrollTrigger.scrollerProxy(".scroller", {
+  //   scrollTop(value) {
+  //     if (arguments.length) {
+  //       bodyScrollBar.scrollTop = value;
+  //     }
+  //     return bodyScrollBar.scrollTop;
+  //   },
+  //   getBoundingClientRect() {
+  //     return {
+  //       top: 0,
+  //       left: 0,
+  //       width: window.innerWidth,
+  //       height: window.innerHeight,
+  //     };
+  //   },
+  //   pinType: "transform", // pin 동작을 위해 필수
+  // });
+  //
+  // bodyScrollBar.addListener(ScrollTrigger.update);
+  // ScrollTrigger.defaults({ scroller: scroller });
 
-  ScrollTrigger.scrollerProxy(".scroller", {
-    scrollTop(value) {
-      if (arguments.length) {
-        bodyScrollBar.scrollTop = value;
-      }
-      return bodyScrollBar.scrollTop;
-    },
-  });
-
-  bodyScrollBar.addListener(ScrollTrigger.update);
-
-  ScrollTrigger.defaults({ scroller: scroller });
-
+  //footer
   gsap.set("section.footer-container", { yPercent: -50 });
-
   const uncover = gsap.timeline({ paused: true });
-
   uncover.to("section.footer-container", { yPercent: 0, ease: "none" });
-
   ScrollTrigger.create({
     trigger: "section.box",
     start: "bottom bottom",
@@ -51,15 +58,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const mainTextTl = gsap.timeline({
     scrollTrigger: {
       trigger: ".horizontal-txt",
-      start: "-50% 0",
-      end: "bottom top",
+      start: "top 100px",
+      end: "top top",
       scrub: 3,
-      markers: {
-        startColor: "orange",
-      },
-      onUpdate: (self) => {
-        console.log(self);
-      },
+      markers: false,
+      onUpdate: (self) => {},
     },
   });
 
@@ -73,6 +76,39 @@ document.addEventListener("DOMContentLoaded", () => {
     .to("text2", { x: "-200%", ease: "none", duration: 2 }, 2)
     .fromTo(".text3", { x: "150%" }, { x: "0%", ease: "none", duration: 2 }, 0)
     .to(".text3", { x: "-250%", ease: "none", duration: 2 }, 2);
+
+  const list = gsap.utils.toArray(".horizontal-list li");
+  gsap.set(".horizontal-list ul", {
+    x: () => ((list.length - 1) * list[0].offsetWidth) / 2,
+  });
+  const HorizontalList = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".horizontal-list",
+      start: "center center",
+      end: () =>
+        "+=" +
+        (document.querySelector(".horizontal-list").offsetWidth +
+          ((list.length - 1) * list[0].offsetWidth) / 2),
+      scrub: 1,
+      markers: true,
+      pin: true,
+      pinSpacing: true,
+      snap: 1 / (list.length - 1),
+      onUpdate: (self) => {
+        console.log(self.progress);
+
+        console.log(
+          document.querySelector(".horizontal-list").offsetWidth,
+          ((list.length - 1) * list[0].offsetWidth) / 2,
+        );
+      },
+    },
+  });
+
+  HorizontalList.to(list, {
+    x: () => -(list.length - 1) * list[0].offsetWidth, // 리스트 길이에 따라 이동 거리 계산
+    ease: "none", // 자연스러운 스크롤 느낌
+  });
 });
 
 //ScrollTrigger.matchMedia({

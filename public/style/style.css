@@ -1,3 +1,5 @@
+@import "./reset.css";
+@import "./main.css";
 #container {
   width: 100%;
   font-size: 1em;
@@ -80,28 +82,15 @@ footer .footer-right {
   border: 1px solid white;
 }
 
-.key-visual {
-  background: #eff0ef;
-}
-
 body {
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
-  overflow: hidden;
 }
 
 .scroller {
   height: 100vh;
-}
-
-section {
-  width: 100vw;
-  height: 100vh;
-}
-section:nth-child(odd) {
-  background-color: white;
 }
 
 .splash {
@@ -140,29 +129,15 @@ section:nth-child(odd) {
   height: 120vh;
 }
 
-.box {
-  background: lightcoral;
-}
-
-.title-area {
-  width: 100%;
+.content {
+  width: 100vw;
   height: 100vh;
-  position: relative;
 }
-.title-area h2 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.content:nth-child(odd) {
+  background-color: white;
 }
-.title-area h2 span {
-  display: block;
-  font-size: 170px;
-}
-.title-area h2 .text2 {
-  -webkit-text-stroke: 4px navy;
-  text-stroke: 4px navy;
-  color: transparent;
+.content.bg-black {
+  background: #000;
 }
 
 /*# sourceMappingURL=style.css.map */

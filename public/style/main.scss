@@ -1,3 +1,76 @@
 .key-visual {
   background: #eff0ef;
 }
+
+//가로스크롤 인터렉션 타이틀
+.horizontal-list {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  ul {
+    display: flex;
+    gap: 20px;
+    height: 100%;
+    li {
+      position: relative;
+      flex: 0 auto;
+      width: 100%;
+      max-width: 520px;
+      //height: 640px;
+      aspect-ratio: 520/640;
+      .thumbnail {
+        display: block;
+        background: #fd7d77;
+        width: 100%;
+        height: 640px;
+        border-radius: 20px;
+        overflow: hidden;
+      }
+      .txt-area {
+        margin-top: 20px;
+      }
+      h3 {
+        font-size: 28px;
+        line-height: 1.4;
+        font-weight: 700;
+        color: #fff;
+      }
+      p {
+        margin-top: 12px;
+        font-size: 16px;
+        line-height: 1.5;
+        font-weight: 400;
+        color: #fff;
+      }
+      & + li {
+        .thumbnail {
+          background: #fcc856;
+        }
+        & + li {
+          .thumbnail {
+            background: #51d164;
+          }
+        }
+      }
+    }
+  }
+}
+
+.title-area {
+  position: relative;
+  h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    span {
+      display: block;
+      font-size: 170px;
+    }
+    .text2 {
+      -webkit-text-stroke: 4px navy;
+      text-stroke: 4px navy;
+      color: transparent;
+    }
+  }
+}

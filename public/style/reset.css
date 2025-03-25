@@ -149,6 +149,7 @@ button,
 select,
 a {
     text-transform: none;
+    text-decoration: none;
 }
 select {
     -webkit-appearance: none;
@@ -178,4 +179,9 @@ button:-moz-focusring {
 a {
     text-decoration: none;
     color: inherit;
+}
+ul{
+    li{
+        list-style: none;
+    }
 }
