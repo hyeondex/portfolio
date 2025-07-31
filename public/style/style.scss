@@ -55,9 +55,39 @@ body {
   width: 100vw;
   height: 100vh;
   &:nth-child(odd) {
-    background-color: white;
+    //background-color: white;
   }
   &.bg-black {
     background: #000;
+  }
+  &:has([class*="detail"]) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    outline: 1px solid red;
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    gap: 40px;
+  }
+  .detail {
+    grid-template-columns: repeat(5, 100px);
+    gap: 40px;
+    li {
+      height: 100px;
+      outline: 1px solid black;
+      border-radius: 4px;
+      overflow: hidden;
+      background: wheat;
+    }
+    img:has([src=""]) {
+      display: none;
+    }
+  }
+  .marque-area {
+    flex: 1 1 auto;
+    outline: 1px solid black;
+    min-width: 100px;
+    height: 100px;
   }
 }

@@ -61,28 +61,56 @@ header {
 footer {
   width: 100%;
   height: 100vh;
-  background: #000;
+  background: rosybrown;
   overflow: hidden;
   .footer-container {
-    height: 75vh;
+    outline: 1px solid red;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    height: calc(100vh - 50px);
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 50px;
   }
-  .footer-left {
+  .footer-row {
+    display: flex;
+    outline: 1px solid red;
+    .logo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: white;
+    }
+  }
+  .contact {
     width: 500px;
     height: 200px;
-    border-radius: 50%;
-    background: #fff;
+    border-radius: 10px;
+    //background: #fff;
+    overflow: hidden;
   }
   .footer-right {
     width: 500px;
     height: 100%;
     border: 1px solid white;
   }
+  .copyright {
+    padding: 20px;
+    background: #000;
+    font-size: 12px;
+    color: #fff;
+  }
 }
 
 #container {
-  background: #000;
+  //background: #000;
+}
+.flex {
+  display: flex;
+}
+.grid {
+  display: grid;
 }

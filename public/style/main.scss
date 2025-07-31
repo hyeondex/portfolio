@@ -1,5 +1,5 @@
 .key-visual {
-  background: #eff0ef;
+  //background: #eff0ef;
 }
 
 //가로스크롤 인터렉션 타이틀
@@ -58,7 +58,8 @@
 
 .title-area {
   position: relative;
-  h2 {
+  h2.horizontal-txt {
+    outline: 1px solid red;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -70,6 +71,7 @@
     .text2 {
       -webkit-text-stroke: 4px navy;
       text-stroke: 4px navy;
+
       color: transparent;
     }
   }

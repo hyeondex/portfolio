@@ -1,7 +1,3 @@
-.key-visual {
-  background: #eff0ef;
-}
-
 .horizontal-list {
   position: relative;
   height: 100vh;
@@ -53,17 +49,18 @@
 .title-area {
   position: relative;
 }
-.title-area h2 {
+.title-area h2.horizontal-txt {
+  outline: 1px solid red;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.title-area h2 span {
+.title-area h2.horizontal-txt span {
   display: block;
   font-size: 170px;
 }
-.title-area h2 .text2 {
+.title-area h2.horizontal-txt .text2 {
   -webkit-text-stroke: 4px navy;
   text-stroke: 4px navy;
   color: transparent;
