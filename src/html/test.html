@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>현대 오토에버 테스트</title>
+    <style>
+      .wrap {
+        position: relative;
+        max-width: 1440px;
+        width: 100%;
+        margin: 0 auto;
+        justify-content: space-between;
+        outline: 1px solid red;
+        display: flex;
+      }
+      .section-wrap {
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      nav {
+        position: sticky;
+        top: 0;
+        left: 0;
+        width: 140px;
+        height: fit-content;
+        outline: 1px solid red;
+      }
+      nav a {
+        display: block;
+        margin-top: 10px;
+        padding: 10px;
+        text-underline: 0;
+      }
+      nav a span {
+        font-size: 14px;
+      }
+      section {
+        flex: 0 auto;
+        font-size: 30px;
+        height: 100vh;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <nav>
+        <a href="#none"><span>menu1</span></a>
+        <a href="#none"><span>menu2</span></a>
+        <a href="#none"><span>menu3</span></a>
+        <a href="#none"><span>menu4</span></a>
+        <a href="#none"><span>menu5</span></a>
+      </nav>
+      <div class="section-wrap">
+        <section class="" data-menu="menu1">
+          <span>menu1</span>
+        </section>
+        <section class="" data-menu="menu2">
+          <span>menu2</span>
+        </section>
+        <section class="" data-menu="menu3">
+          <span>menu3</span>
+        </section>
+        <section class="" data-menu="menu4">
+          <span>menu4</span>
+        </section>
+        <section class="" data-menu="menu5">
+          <span>menu5</span>
+        </section>
+      </div>
+    </div>
+    <script>
+      const wrap = document.querySelector(".wrap");
+      document.querySelectorAll("section");
+      const scrollSection = (target) => {
+        const targetSection = document.querySelector(target);
+        const targetPosition = targetSection.offset - 70;
+
+        window.scrollTo({
+          top: targetSection,
+          behavior: "smooth",
+        });
+      };
+      document.querySelectorAll("nav > a").forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+        });
+      });
+
+      const navClickHandler = (e) => {};
+    </script>
+  </body>
+</html>
