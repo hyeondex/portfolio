@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .fromTo(".text1", { x: "100%" }, { x: "0%", ease: "none", duration: 1 }, 0)
     .to(".text1", { x: "0", ease: "none", duration: 2 }, 1)
     .fromTo(".text2", { x: "-100%" }, { x: "0%", ease: "none", duration: 2 }, 0)
-    .to("text2", { x: "0%", ease: "none", duration: 2 }, 2)
+    .to(".text2", { x: "0%", ease: "none", duration: 2 }, 2)
     .fromTo(".text3", { x: "150%" }, { x: "0%", ease: "none", duration: 2 }, 0)
     .to(".text3", { x: "0%", ease: "none", duration: 2 }, 2);
 
@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
       start: "top 60px",
       end: "bottom center",
       scrub: 2,
-      markers: true,
+      //markers: true,
       pin: true,
       snap: 1 / (list.length - 1),
       onUpdate: (self) => {
@@ -108,35 +108,64 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "none", // 자연스러운 스크롤 느낌
   });
 
-  //background color scroll modify
-  const container = document.querySelector(".contents");
-  const contentBackgroundScroll = gsap.timeline({
-    scrollTrigger: {
-      trigger: "body",
-      start: "center center",
-      end: "bottom bottom",
-      scrub: 3,
-      markers: {
-        startColor: "hotpink",
-        endColor: "darkred",
+  // logo list update
+  const slist = document.querySelectorAll(".detail li");
+  const listArea = document.querySelector(".gsap-area");
+  const sListIn = (li, index) =>
+    gsap.fromTo(
+      li,
+      {
+        y: 50,
+        opacity: 0,
       },
-      //delay: 0.3,
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.5,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: listArea,
+          start: "-30% top",
+          end: "top 50%",
+          scrub: 0.5 + index,
+          markers: true,
+        },
+      },
+    );
+  slist.forEach((li, index) => {
+    sListIn(li, index);
+  });
 
-      onEnter: () => {
-        console.log("enter", container);
-        //container.style.backgroundColor = "black";
-      },
-      onEnterBack: () => {
-        console.log("back");
-        //container.style.backgroundColor = "white";
-      },
-    },
-  });
-  contentBackgroundScroll.to(container, {
-    background: `linear-gradient(45deg,#000, #fff, 0.2)`,
-    duration: 1,
-    ease: "power2.out",
-  });
+  // todo background color scroll modify
+  // const container = document.querySelector(".contents");
+  //
+  // const contentBackgroundScroll = gsap.timeline({
+  //   scrollTrigger: {
+  //     trigger: "body",
+  //     start: "center center",
+  //     end: "bottom bottom",
+  //     scrub: 3,
+  //     markers: {
+  //       startColor: "hotpink",
+  //       endColor: "darkred",
+  //     },
+  //     //delay: 0.3,
+  //
+  //     onEnter: () => {
+  //       console.log("enter", container);
+  //       //container.style.backgroundColor = "black";
+  //     },
+  //     onEnterBack: () => {
+  //       console.log("back");
+  //       //container.style.backgroundColor = "white";
+  //     },
+  //   },
+  // });
+  // contentBackgroundScroll.to(container, {
+  //   background: `linear-gradient(45deg,#000, #fff, 0.2)`,
+  //   duration: 1,
+  //   ease: "power2.out",
+  // });
 });
 
 //ScrollTrigger.matchMedia({
